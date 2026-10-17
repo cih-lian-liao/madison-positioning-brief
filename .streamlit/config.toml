@@ -1,0 +1,14 @@
+[client]
+# Visitors never see stack traces; the app shows its own plain-English messages.
+showErrorDetails = "none"
+toolbarMode = "viewer"
+
+[server]
+maxUploadSize = 2
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#2457c5"
