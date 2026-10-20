@@ -14,6 +14,7 @@ import streamlit as st
 
 from madison import render
 from madison.config import BRANDS, SAMPLES_DIR, SNAPSHOT_DATE, SOURCES, THEMES
+from madison.data import load_snapshot, parse_upload
 from madison.errors import FriendlyError
 from madison.limits import reserver, visitor_id
 from madison.pipeline import Settings, fmt_day, run
@@ -44,8 +45,9 @@ HEADER = f"""<div class="mpb mpb-header">
 <p class="mpb-lede">Built for product marketers at data platform companies, so you can answer
 <b>“How do we win?”</b> with proof, not opinion. Every claim links to its public source, and a brief is
 marked <b>Verified</b> only when every citation passes an automatic check.</p>
-<p class="mpb-small mpb-muted">Evidence: 217 checked public records about Databricks, Snowflake, Google BigQuery and
-Microsoft Fabric (press coverage, company blogs and Hacker News threads), collected {fmt_day(SNAPSHOT_DATE)}.</p>
+<p class="mpb-small mpb-muted"><b>This version covers four companies: Databricks, Snowflake, Google BigQuery and
+Microsoft Fabric.</b> Its evidence is 217 checked public records (press coverage, company blogs and Hacker News
+threads), collected {fmt_day(SNAPSHOT_DATE)}.</p>
 </div>"""
 
 FOOTER = """<div class="mpb mpb-footer">Made by Cih-Lian Liao for INFO7375 at Northeastern University. Not affiliated
@@ -115,10 +117,20 @@ with st.sidebar:
                             placeholder="e.g. Sales says Snowflake is easier to start with. How do we respond?")
 
     with st.expander("6. Add your own evidence (optional, CSV file)"):
-        st.markdown("Found articles the built-in evidence doesn’t include? Add up to 100 rows. Each row needs "
-                    "**brand**, **source_type** (news, blog or forum), **title**, **url** and "
-                    "**published_date** (YYYY-MM-DD).")
+        st.markdown("Found more articles about **Databricks, Snowflake, Google BigQuery or Microsoft Fabric**? "
+                    "Add up to 100 rows. Articles about other companies can’t be used yet, because every claim has "
+                    "to stand on checked evidence about these four. Each row needs **brand**, **source_type** "
+                    "(news, blog or forum), **title**, **url** and **published_date** (YYYY-MM-DD).")
         upload = st.file_uploader("Your CSV file")
+        if upload is not None:  # check the file straight away, before anything is built
+            check_path = Path(tempfile.mkdtemp(prefix="madison-check-")) / Path(upload.name).name
+            check_path.write_bytes(upload.getvalue())
+            try:
+                rows_ok, rows_skipped = parse_upload(str(check_path), [company] + competitors,
+                                                     {r["url"] for r in load_snapshot()})
+                st.html(render.upload_check_view(rows_ok, rows_skipped))
+            except FriendlyError as err:
+                st.html(render.upload_error_view(err))
         st.download_button("Download the CSV template", data=TEMPLATE.read_bytes(),
                            file_name="madison_evidence_template.csv", mime="text/csv", on_click="ignore")
 

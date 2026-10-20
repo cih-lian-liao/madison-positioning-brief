@@ -60,6 +60,25 @@ def load_labels(focus):
     return out
 
 
+@lru_cache(maxsize=1)
+def load_proof_types():
+    """{record_id: proof_type} for every snapshot record (built by tools/build_proof_types.py)."""
+    path = LABELS_DIR / "proof_types.csv"
+    if not path.exists():
+        return {}
+    with path.open(encoding="utf-8", newline="") as f:
+        return {r["record_id"]: r["proof_type"] for r in csv.DictReader(f)}
+
+
+def save_proof_types(proofs):
+    LABELS_DIR.mkdir(parents=True, exist_ok=True)
+    with (LABELS_DIR / "proof_types.csv").open("w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["record_id", "proof_type"])
+        for rid in sorted(proofs):
+            w.writerow([rid, proofs[rid]])
+
+
 def save_labels(focus, labels):
     LABELS_DIR.mkdir(parents=True, exist_ok=True)
     with (LABELS_DIR / f"focus_{slug(focus)}.csv").open("w", encoding="utf-8", newline="") as f:

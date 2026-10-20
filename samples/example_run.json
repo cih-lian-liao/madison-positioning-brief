@@ -1,7 +1,7 @@
 {
- "run_id": "20261017T100427",
- "generated_at": "2026-10-17T10:04:27-07:00",
- "built_label": "17 Oct 2026, 10:04 AM PDT",
+ "run_id": "20261019T190633",
+ "generated_at": "2026-10-19T19:06:33-07:00",
+ "built_label": "19 Oct 2026, 7:06 PM PDT",
  "settings": {
   "company": "Databricks",
   "competitors": [
@@ -29,38 +29,63 @@
     "claim": "Positioning statement",
     "refs": [
      "DBX-BLOG-001",
+     "DBX-BLOG-005",
+     "DBX-BLOG-008",
+     "SNOW-BLOG-016",
+     "BQ-BLOG-005"
+    ],
+    "verified": true,
+    "problems": [],
+    "proof": {
+     "types": [
+      "customer_story",
+      "launch"
+     ],
+     "strength": "strong"
+    }
+   },
+   {
+    "claim": "Why we win #1: Conversational AI Agents in Production",
+    "refs": [
+     "DBX-BLOG-001"
+    ],
+    "verified": true,
+    "problems": [],
+    "proof": {
+     "types": [
+      "customer_story"
+     ],
+     "strength": "strong"
+    }
+   },
+   {
+    "claim": "Why we win #2: Trillion-Token Scale Governance",
+    "refs": [
+     "DBX-BLOG-005"
+    ],
+    "verified": true,
+    "problems": [],
+    "proof": {
+     "types": [
+      "customer_story"
+     ],
+     "strength": "strong"
+    }
+   },
+   {
+    "claim": "Why we win #3: Unified Platform for Data and AI",
+    "refs": [
      "DBX-BLOG-003",
-     "DBX-BLOG-005",
-     "DBX-BLOG-006"
+     "DBX-BLOG-008"
     ],
     "verified": true,
-    "problems": []
-   },
-   {
-    "claim": "Why we win #1: Unified AI Agent Governance",
-    "refs": [
-     "DBX-BLOG-005",
-     "DBX-BLOG-004"
-    ],
-    "verified": true,
-    "problems": []
-   },
-   {
-    "claim": "Why we win #2: Conversational Data Access",
-    "refs": [
-     "DBX-BLOG-001",
-     "DBX-BLOG-007"
-    ],
-    "verified": true,
-    "problems": []
-   },
-   {
-    "claim": "Why we win #3: Transparent Cost Management",
-    "refs": [
-     "DBX-BLOG-006"
-    ],
-    "verified": true,
-    "problems": []
+    "problems": [],
+    "proof": {
+     "types": [
+      "launch"
+     ],
+     "strength": "strong"
+    }
    },
    {
     "claim": "vs Snowflake",
@@ -68,20 +93,36 @@
      "SNOW-BLOG-016",
      "SNOW-BLOG-020",
      "SNOW-DEV-010",
-     "SNOW-DEV-020",
+     "SNOW-BLOG-001",
+     "SNOW-BLOG-003",
+     "SNOW-BLOG-004",
      "SNOW-BLOG-005"
     ],
     "verified": true,
-    "problems": []
+    "problems": [],
+    "proof": {
+     "types": [
+      "launch",
+      "partnership",
+      "customer_story"
+     ],
+     "strength": "strong"
+    }
    },
    {
     "claim": "vs Snowflake: our proof",
     "refs": [
-     "DBX-BLOG-005",
-     "DBX-BLOG-006"
+     "DBX-BLOG-001",
+     "DBX-BLOG-005"
     ],
     "verified": true,
-    "problems": []
+    "problems": [],
+    "proof": {
+     "types": [
+      "customer_story"
+     ],
+     "strength": "strong"
+    }
    },
    {
     "claim": "vs Google BigQuery",
@@ -89,21 +130,36 @@
      "BQ-BLOG-002",
      "BQ-BLOG-005",
      "BQ-BLOG-020",
+     "BQ-BLOG-006",
+     "BQ-BLOG-007",
      "BQ-BLOG-008",
+     "BQ-BLOG-011",
      "BQ-BLOG-012"
     ],
     "verified": true,
-    "problems": []
+    "problems": [],
+    "proof": {
+     "types": [
+      "launch",
+      "how_to"
+     ],
+     "strength": "strong"
+    }
    },
    {
     "claim": "vs Google BigQuery: our proof",
     "refs": [
-     "DBX-BLOG-001",
      "DBX-BLOG-005",
-     "DBX-BLOG-006"
+     "DBX-BLOG-001"
     ],
     "verified": true,
-    "problems": []
+    "problems": [],
+    "proof": {
+     "types": [
+      "customer_story"
+     ],
+     "strength": "strong"
+    }
    },
    {
     "claim": "vs Microsoft Fabric",
@@ -112,37 +168,65 @@
      "FAB-DEV-002",
      "FAB-BLOG-004",
      "FAB-BLOG-006",
+     "FAB-BLOG-007",
+     "FAB-BLOG-008",
+     "FAB-BLOG-011",
      "FAB-BLOG-014"
     ],
     "verified": true,
-    "problems": []
+    "problems": [],
+    "proof": {
+     "types": [
+      "launch",
+      "how_to"
+     ],
+     "strength": "strong"
+    }
    },
    {
     "claim": "vs Microsoft Fabric: our proof",
     "refs": [
-     "DBX-BLOG-003",
      "DBX-BLOG-005",
-     "DBX-BLOG-001"
+     "DBX-BLOG-003"
     ],
     "verified": true,
-    "problems": []
+    "problems": [],
+    "proof": {
+     "types": [
+      "customer_story",
+      "launch"
+     ],
+     "strength": "strong"
+    }
    },
    {
     "claim": "Risk #1",
-    "refs": [
-     "DBX-DEV-023"
-    ],
-    "verified": true,
-    "problems": []
-   },
-   {
-    "claim": "Risk #2",
     "refs": [
      "DBX-NEWS-005",
      "DBX-NEWS-017"
     ],
     "verified": true,
-    "problems": []
+    "problems": [],
+    "proof": {
+     "types": [
+      "business_news"
+     ],
+     "strength": "medium"
+    }
+   },
+   {
+    "claim": "Risk #2",
+    "refs": [
+     "DBX-DEV-023"
+    ],
+    "verified": true,
+    "problems": [],
+    "proof": {
+     "types": [
+      "business_news"
+     ],
+     "strength": "medium"
+    }
    },
    {
     "claim": "Risk #3",
@@ -150,9 +234,16 @@
      "DBX-DEV-038"
     ],
     "verified": true,
-    "problems": []
+    "problems": [],
+    "proof": {
+     "types": [
+      "customer_story"
+     ],
+     "strength": "strong"
+    }
    }
   ],
+  "weak_proof": [],
   "attempt": 1
  },
  "qa_history": [
@@ -173,9 +264,9 @@
   },
   {
    "brand": "Google BigQuery",
-   "ai": 4,
+   "ai": 5,
    "evidence_avg": 3.43,
-   "ok": true
+   "ok": false
   },
   {
    "brand": "Microsoft Fabric",
@@ -185,113 +276,130 @@
   }
  ],
  "brief": {
-  "executive_summary": "The data and AI platform market is rapidly evolving, with competitors aggressively integrating AI agents and expanding cross-cloud and governance capabilities. The biggest threat comes from Snowflake, which is leveraging high-profile AI partnerships and advanced agentic computing features. Databricks should emphasize its unified governance, scalable AI agent deployment, and cost transparency to differentiate, while proactively addressing security and valuation concerns.",
+  "executive_summary": "The market for data platforms is rapidly evolving with a strong focus on AI agents, governed analytics, and performance at scale. The biggest threat comes from Snowflake, which is aggressively integrating advanced AI models and forming major partnerships, while Google BigQuery and Microsoft Fabric are also pushing hard on agentic analytics and governance. Databricks should emphasize its proven customer success with AI agents, robust governance at scale, and unified platform for both data and AI workloads, while proactively addressing concerns about security and business stability.",
   "positioning_statement": {
-   "text": "For enterprises seeking to unify analytics, AI, and governance at scale, Databricks is the data and AI platform that enables secure, conversational, and cost-transparent agentic workflows; unlike Snowflake, Google BigQuery, and Microsoft Fabric, it delivers open, governed AI agent deployment and deep cost insights in a single platform.",
+   "text": "For data-driven enterprises who need to operationalize AI agents and analytics on governed, scalable data platforms, Databricks is the unified data and AI platform that delivers conversational AI, robust governance, and seamless deployment at scale; unlike Snowflake and Google BigQuery, it provides proven customer outcomes with conversational AI agents and trillion-token governance in production environments.",
    "evidence_refs": [
     "DBX-BLOG-001",
-    "DBX-BLOG-003",
     "DBX-BLOG-005",
-    "DBX-BLOG-006"
+    "DBX-BLOG-008",
+    "SNOW-BLOG-016",
+    "BQ-BLOG-005"
    ],
    "verified": true
   },
   "differentiators": [
    {
-    "title": "Unified AI Agent Governance",
-    "claim": "Databricks enables organizations to govern AI agents and clinical AI workloads at massive scale through Unity Gateway, supporting secure and compliant operations.",
+    "title": "Conversational AI Agents in Production",
+    "claim": "Databricks enables enterprises to deploy conversational AI agents that provide direct, governed access to structured data, as demonstrated by S&P Global Energy's use of Genie Agents.",
     "evidence_refs": [
-     "DBX-BLOG-005",
-     "DBX-BLOG-004"
+     "DBX-BLOG-001"
     ],
-    "verified": true
+    "verified": true,
+    "proof": {
+     "types": [
+      "customer_story"
+     ],
+     "strength": "strong"
+    }
    },
    {
-    "title": "Conversational Data Access",
-    "claim": "With Genie Agents, Databricks provides conversational access to structured data, making enterprise data estates more accessible and actionable for business users.",
+    "title": "Trillion-Token Scale Governance",
+    "claim": "With Unity Gateway, Databricks supports governance and security for AI and data workloads at a trillion-token scale, proven in clinical AI deployments.",
     "evidence_refs": [
-     "DBX-BLOG-001",
-     "DBX-BLOG-007"
+     "DBX-BLOG-005"
     ],
-    "verified": true
+    "verified": true,
+    "proof": {
+     "types": [
+      "customer_story"
+     ],
+     "strength": "strong"
+    }
    },
    {
-    "title": "Transparent Cost Management",
-    "claim": "Databricks offers robust tools for understanding and managing platform usage and costs, helping customers optimize spend and performance.",
+    "title": "Unified Platform for Data and AI",
+    "claim": "Databricks offers a single platform to deploy and manage both coding and business AI agents at scale, simplifying operations and accelerating innovation.",
     "evidence_refs": [
-     "DBX-BLOG-006"
+     "DBX-BLOG-003",
+     "DBX-BLOG-008"
     ],
-    "verified": true
+    "verified": true,
+    "proof": {
+     "types": [
+      "launch"
+     ],
+     "strength": "strong"
+    }
    }
   ],
   "competitors": [
    {
     "brand": "Snowflake",
-    "what_they_push": "Snowflake focuses on integrating advanced AI agents and models within a secure, unified data platform, backed by major ecosystem partnerships.",
+    "what_they_push": "Snowflake is integrating frontier AI models and agentic computing directly into its platform, emphasizing secure, high-performance AI agent workloads and major ecosystem partnerships.",
     "threat_level": 5,
-    "how_to_win": "Databricks should emphasize its open, governed AI agent deployment and cost transparency, while highlighting its ability to manage complex, large-scale AI workloads securely.",
+    "how_to_win": "Databricks should highlight its real-world customer deployments of conversational AI agents and governance at scale, areas where Snowflake's evidence is focused on model integration and preview features rather than production outcomes.",
     "evidence_refs": [
      "SNOW-BLOG-016",
      "SNOW-BLOG-020",
      "SNOW-DEV-010",
-     "SNOW-DEV-020",
+     "SNOW-BLOG-001",
+     "SNOW-BLOG-003",
+     "SNOW-BLOG-004",
      "SNOW-BLOG-005"
     ],
     "counter_refs": [
-     "DBX-BLOG-005",
-     "DBX-BLOG-006"
+     "DBX-BLOG-001",
+     "DBX-BLOG-005"
     ],
     "verified": true
    },
    {
     "brand": "Google BigQuery",
-    "what_they_push": "BigQuery promotes cross-cloud analytics, AI-powered agentic analytics, and advanced data engineering features for trusted autonomous workloads.",
-    "threat_level": 4,
-    "how_to_win": "Databricks should stress its unified governance and conversational AI capabilities, as well as its transparent cost management, to appeal to enterprises seeking control and insight.",
+    "what_they_push": "BigQuery is advancing agent-ready analytics, cross-cloud data access, and AI-powered automation for trusted, scalable workloads.",
+    "threat_level": 5,
+    "how_to_win": "Databricks should emphasize its proven governance and AI agent deployments in regulated industries, contrasting with BigQuery's focus on preview features and technical enhancements.",
     "evidence_refs": [
      "BQ-BLOG-002",
      "BQ-BLOG-005",
      "BQ-BLOG-020",
+     "BQ-BLOG-006",
+     "BQ-BLOG-007",
      "BQ-BLOG-008",
+     "BQ-BLOG-011",
      "BQ-BLOG-012"
     ],
     "counter_refs": [
-     "DBX-BLOG-001",
      "DBX-BLOG-005",
-     "DBX-BLOG-006"
+     "DBX-BLOG-001"
     ],
     "verified": true
    },
    {
     "brand": "Microsoft Fabric",
-    "what_they_push": "Microsoft Fabric integrates AI-driven data agents and real-time event architectures with strong governance and data engineering best practices.",
+    "what_they_push": "Microsoft Fabric is promoting governed AI-driven insights through Copilot Studio and scalable event-driven architectures, with a strong emphasis on integration and performance diagnostics.",
     "threat_level": 4,
-    "how_to_win": "Databricks should highlight its scalable AI agent deployment, unified governance, and ease of conversational data access, positioning itself as the platform for complex, governed AI workloads.",
+    "how_to_win": "Databricks should focus on its unified approach to data and AI governance at scale, and highlight customer stories in production environments, as Fabric's evidence centers on integration and architectural guidance.",
     "evidence_refs": [
      "FAB-BLOG-019",
      "FAB-DEV-002",
      "FAB-BLOG-004",
      "FAB-BLOG-006",
+     "FAB-BLOG-007",
+     "FAB-BLOG-008",
+     "FAB-BLOG-011",
      "FAB-BLOG-014"
     ],
     "counter_refs": [
-     "DBX-BLOG-003",
      "DBX-BLOG-005",
-     "DBX-BLOG-001"
+     "DBX-BLOG-003"
     ],
     "verified": true
    }
   ],
   "risks_to_watch": [
    {
-    "risk": "Databricks faces security concerns, including allegations of a supply chain attack that could impact customer trust.",
-    "evidence_refs": [
-     "DBX-DEV-023"
-    ],
-    "verified": true
-   },
-   {
-    "risk": "Skepticism about Databricks’ high valuation and ongoing legal disputes may distract from product strengths and affect market confidence.",
+    "risk": "Databricks faces skepticism about its business valuation and legal challenges ahead of a potential IPO.",
     "evidence_refs": [
      "DBX-NEWS-005",
      "DBX-NEWS-017"
@@ -299,7 +407,14 @@
     "verified": true
    },
    {
-    "risk": "Some customers are migrating away from Databricks notebooks, indicating potential gaps in developer experience.",
+    "risk": "Security concerns have been raised due to an alleged supply chain attack compromising Databricks.",
+    "evidence_refs": [
+     "DBX-DEV-023"
+    ],
+    "verified": true
+   },
+   {
+    "risk": "Some customers have migrated away from Databricks notebooks, citing developer experience issues.",
     "evidence_refs": [
      "DBX-DEV-038"
     ],
@@ -372,11 +487,11 @@
     "DBX-BLOG-001",
     "DBX-BLOG-002",
     "DBX-BLOG-003",
-    "DBX-BLOG-004",
     "DBX-BLOG-005",
-    "DBX-BLOG-006",
     "DBX-BLOG-007",
-    "DBX-BLOG-008"
+    "DBX-BLOG-008",
+    "DBX-BLOG-009",
+    "DBX-NEWS-003"
    ],
    "question_hits": [],
    "self_risks": [
@@ -634,6 +749,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 1,
@@ -655,6 +771,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 1,
@@ -676,6 +793,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 1,
@@ -697,6 +815,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "developer_experience",
    "threat": 1,
@@ -718,6 +837,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "negative",
    "theme": "funding_business",
    "threat": 3,
@@ -739,6 +859,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "negative",
    "theme": "funding_business",
    "threat": 3,
@@ -761,6 +882,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 1,
@@ -782,6 +904,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 1,
@@ -803,6 +926,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 1,
@@ -824,6 +948,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 1,
@@ -845,6 +970,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 1,
@@ -866,6 +992,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 1,
@@ -887,6 +1014,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "",
    "theme": "",
    "threat": null,
@@ -908,6 +1036,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 1,
@@ -929,6 +1058,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 1,
@@ -950,6 +1080,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 1,
@@ -971,6 +1102,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "negative",
    "theme": "funding_business",
    "threat": 3,
@@ -992,6 +1124,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "neutral",
    "theme": "other",
    "threat": 1,
@@ -1013,6 +1146,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 1,
@@ -1034,6 +1168,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "developer_experience",
    "threat": 1,
@@ -1055,6 +1190,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 1,
@@ -1076,6 +1212,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "neutral",
    "theme": "funding_business",
    "threat": 1,
@@ -1097,6 +1234,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 1,
@@ -1118,6 +1256,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "performance_cost",
    "threat": 1,
@@ -1139,6 +1278,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 3,
@@ -1160,6 +1300,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 3,
@@ -1181,6 +1322,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 4,
@@ -1202,6 +1344,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "neutral",
    "theme": "funding_business",
    "threat": 1,
@@ -1223,6 +1366,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 3,
@@ -1244,6 +1388,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 2,
@@ -1265,6 +1410,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 3,
@@ -1286,6 +1432,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 3,
@@ -1307,6 +1454,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 4,
@@ -1328,6 +1476,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 4,
@@ -1349,6 +1498,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "customer_story",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 3,
@@ -1370,6 +1520,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "neutral",
    "theme": "analytics_bi",
    "threat": 3,
@@ -1391,6 +1542,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "neutral",
    "theme": "data_platform",
    "threat": 2,
@@ -1412,6 +1564,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "neutral",
    "theme": "funding_business",
    "threat": 1,
@@ -1433,6 +1586,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 4,
@@ -1454,6 +1608,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 2,
@@ -1475,6 +1630,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 2,
@@ -1496,6 +1652,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 3,
@@ -1517,6 +1674,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 2,
@@ -1538,6 +1696,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 4,
@@ -1559,6 +1718,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 3,
@@ -1580,6 +1740,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 4,
@@ -1601,6 +1762,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 2,
@@ -1622,6 +1784,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "neutral",
    "theme": "funding_business",
    "threat": 1,
@@ -1643,6 +1806,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "neutral",
    "theme": "funding_business",
    "threat": 1,
@@ -1664,6 +1828,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "neutral",
    "theme": "performance_cost",
    "threat": 3,
@@ -1685,6 +1850,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "neutral",
    "theme": "performance_cost",
    "threat": 3,
@@ -1706,6 +1872,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 4,
@@ -1727,6 +1894,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "data_platform",
    "threat": 3,
@@ -1748,6 +1916,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "performance_cost",
    "threat": 4,
@@ -1769,6 +1938,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "analytics_bi",
    "threat": 3,
@@ -1790,6 +1960,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "analytics_bi",
    "threat": 4,
@@ -1811,6 +1982,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "customer_story",
    "sentiment": "positive",
    "theme": "performance_cost",
    "threat": 4,
@@ -1832,6 +2004,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 3,
@@ -1853,6 +2026,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "negative",
    "theme": "governance_security",
    "threat": 1,
@@ -1874,6 +2048,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "customer_story",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 3,
@@ -1895,6 +2070,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 2,
@@ -1916,6 +2092,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 3,
@@ -1937,6 +2114,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 4,
@@ -1958,6 +2136,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 2,
@@ -1979,6 +2158,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 4,
@@ -2000,6 +2180,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 2,
@@ -2021,6 +2202,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 3,
@@ -2042,6 +2224,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "data_platform",
    "threat": 3,
@@ -2063,6 +2246,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 3,
@@ -2084,6 +2268,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "customer_story",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 1,
@@ -2105,6 +2290,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "data_platform",
    "threat": 1,
@@ -2126,6 +2312,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "developer_experience",
    "threat": 1,
@@ -2147,6 +2334,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 1,
@@ -2154,7 +2342,7 @@
    "insight": "Databricks leverages AI agents to enhance security review automation.",
    "ai_status": "ok",
    "ai_issue": "",
-   "cited": true
+   "cited": false
   },
   {
    "record_id": "DBX-BLOG-005",
@@ -2168,6 +2356,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "customer_story",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 1,
@@ -2189,6 +2378,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "performance_cost",
    "threat": 1,
@@ -2196,7 +2386,7 @@
    "insight": "Databricks provides tools to optimize cost transparency and management.",
    "ai_status": "ok",
    "ai_issue": "",
-   "cited": true
+   "cited": false
   },
   {
    "record_id": "DBX-BLOG-007",
@@ -2210,6 +2400,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 1,
@@ -2217,7 +2408,7 @@
    "insight": "Databricks is emphasizing AI agents enhanced by business context to improve reliability.",
    "ai_status": "ok",
    "ai_issue": "",
-   "cited": true
+   "cited": false
   },
   {
    "record_id": "DBX-BLOG-008",
@@ -2231,6 +2422,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 1,
@@ -2238,7 +2430,7 @@
    "insight": "Databricks is advancing AI coworker and coding agent capabilities with a GA product.",
    "ai_status": "ok",
    "ai_issue": "",
-   "cited": false
+   "cited": true
   },
   {
    "record_id": "DBX-BLOG-009",
@@ -2252,6 +2444,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 1,
@@ -2273,6 +2466,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "performance_cost",
    "threat": 1,
@@ -2294,6 +2488,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "customer_story",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 4,
@@ -2301,7 +2496,7 @@
    "insight": "Snowflake leverages AI in M&A processes, demonstrating advanced AI and data platform integration.",
    "ai_status": "ok",
    "ai_issue": "",
-   "cited": false
+   "cited": true
   },
   {
    "record_id": "SNOW-BLOG-002",
@@ -2315,6 +2510,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "customer_story",
    "sentiment": "positive",
    "theme": "analytics_bi",
    "threat": 3,
@@ -2336,6 +2532,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 4,
@@ -2343,7 +2540,7 @@
    "insight": "Snowflake is advancing AI with open-weight models for coding and research, signaling strong AI platform ambitions.",
    "ai_status": "ok",
    "ai_issue": "",
-   "cited": false
+   "cited": true
   },
   {
    "record_id": "SNOW-BLOG-004",
@@ -2357,6 +2554,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 4,
@@ -2364,7 +2562,7 @@
    "insight": "Snowflake is rapidly iterating AI models with broad enterprise use cases, increasing competitive AI pressure.",
    "ai_status": "ok",
    "ai_issue": "",
-   "cited": false
+   "cited": true
   },
   {
    "record_id": "SNOW-BLOG-005",
@@ -2378,6 +2576,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 4,
@@ -2399,6 +2598,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 3,
@@ -2420,6 +2620,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 3,
@@ -2441,6 +2642,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "data_engineering",
    "threat": 4,
@@ -2462,6 +2664,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 3,
@@ -2483,6 +2686,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 3,
@@ -2504,6 +2708,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "customer_story",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 4,
@@ -2525,6 +2730,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "customer_story",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 4,
@@ -2546,6 +2752,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "data_engineering",
    "threat": 4,
@@ -2567,6 +2774,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 2,
@@ -2588,6 +2796,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 3,
@@ -2609,6 +2818,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 5,
@@ -2630,6 +2840,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 3,
@@ -2651,6 +2862,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 3,
@@ -2672,6 +2884,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "developer_experience",
    "threat": 4,
@@ -2693,6 +2906,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 5,
@@ -2714,6 +2928,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "data_engineering",
    "threat": 3,
@@ -2735,6 +2950,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "data_platform",
    "threat": 5,
@@ -2756,6 +2972,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "customer_story",
    "sentiment": "positive",
    "theme": "data_engineering",
    "threat": 3,
@@ -2777,6 +2994,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 3,
@@ -2798,6 +3016,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 5,
@@ -2819,6 +3038,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "data_engineering",
    "threat": 4,
@@ -2826,7 +3046,7 @@
    "insight": "Google enhances Dataflow for AI workloads with GPU support and operational flexibility.",
    "ai_status": "ok",
    "ai_issue": "",
-   "cited": false
+   "cited": true
   },
   {
    "record_id": "BQ-BLOG-007",
@@ -2840,6 +3060,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 4,
@@ -2847,7 +3068,7 @@
    "insight": "Google BigQuery is integrating AI inference directly into streaming pipelines, enhancing real-time AI capabilities.",
    "ai_status": "ok",
    "ai_issue": "",
-   "cited": false
+   "cited": true
   },
   {
    "record_id": "BQ-BLOG-008",
@@ -2861,6 +3082,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 4,
@@ -2882,6 +3104,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "customer_story",
    "sentiment": "positive",
    "theme": "performance_cost",
    "threat": 3,
@@ -2903,6 +3126,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "data_engineering",
    "threat": 3,
@@ -2924,6 +3148,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "analytics_bi",
    "threat": 4,
@@ -2931,7 +3156,7 @@
    "insight": "Google offers built-in predictive analytics to reduce complexity of custom model deployment.",
    "ai_status": "ok",
    "ai_issue": "",
-   "cited": false
+   "cited": true
   },
   {
    "record_id": "BQ-BLOG-012",
@@ -2945,6 +3170,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "data_platform",
    "threat": 4,
@@ -2966,6 +3192,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "data_engineering",
    "threat": 4,
@@ -2987,6 +3214,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 3,
@@ -3008,6 +3236,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "data_engineering",
    "threat": 4,
@@ -3029,6 +3258,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "data_platform",
    "threat": 3,
@@ -3050,6 +3280,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "customer_story",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 4,
@@ -3071,6 +3302,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "data_engineering",
    "threat": 4,
@@ -3092,6 +3324,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 3,
@@ -3113,6 +3346,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 5,
@@ -3134,6 +3368,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 3,
@@ -3155,6 +3390,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "neutral",
    "theme": "data_engineering",
    "threat": 2,
@@ -3176,6 +3412,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 2,
@@ -3197,6 +3434,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "data_platform",
    "threat": 4,
@@ -3218,6 +3456,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "developer_experience",
    "threat": 2,
@@ -3239,6 +3478,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "performance_cost",
    "threat": 4,
@@ -3260,6 +3500,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "data_engineering",
    "threat": 4,
@@ -3267,7 +3508,7 @@
    "insight": "Fabric is pushing real-time event-driven data engineering patterns, a key area overlapping Databricks streaming.",
    "ai_status": "ok",
    "ai_issue": "",
-   "cited": false
+   "cited": true
   },
   {
    "record_id": "FAB-BLOG-008",
@@ -3281,6 +3522,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "data_engineering",
    "threat": 4,
@@ -3288,7 +3530,7 @@
    "insight": "Fabric emphasizes scalable event-driven data engineering, reinforcing its competitive stance in streaming and pipelines.",
    "ai_status": "ok",
    "ai_issue": "",
-   "cited": false
+   "cited": true
   },
   {
    "record_id": "FAB-BLOG-009",
@@ -3302,6 +3544,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 3,
@@ -3323,6 +3566,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 3,
@@ -3344,6 +3588,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "performance_cost",
    "threat": 4,
@@ -3351,7 +3596,7 @@
    "insight": "Fabric improves performance on common JSON workloads, addressing a key data engineering challenge.",
    "ai_status": "ok",
    "ai_issue": "",
-   "cited": false
+   "cited": true
   },
   {
    "record_id": "FAB-BLOG-012",
@@ -3365,6 +3610,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 3,
@@ -3386,6 +3632,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "developer_experience",
    "threat": 3,
@@ -3407,6 +3654,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "data_engineering",
    "threat": 4,
@@ -3428,6 +3676,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 3,
@@ -3449,6 +3698,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "data_engineering",
    "threat": 3,
@@ -3470,6 +3720,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 2,
@@ -3491,6 +3742,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 4,
@@ -3512,6 +3764,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 5,
@@ -3533,6 +3786,7 @@
    "points": "",
    "comments": "",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "performance_cost",
    "threat": 3,
@@ -3554,6 +3808,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 1,
@@ -3575,6 +3830,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "customer_story",
    "sentiment": "positive",
    "theme": "performance_cost",
    "threat": 1,
@@ -3596,6 +3852,7 @@
    "points": "4",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 1,
@@ -3617,6 +3874,7 @@
    "points": "4",
    "comments": "2",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "neutral",
    "theme": "funding_business",
    "threat": 1,
@@ -3638,6 +3896,7 @@
    "points": "4",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 1,
@@ -3659,6 +3918,7 @@
    "points": "7",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "developer_experience",
    "threat": 1,
@@ -3680,6 +3940,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "performance_cost",
    "threat": 1,
@@ -3701,6 +3962,7 @@
    "points": "6",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 1,
@@ -3722,6 +3984,7 @@
    "points": "4",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 1,
@@ -3743,6 +4006,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 1,
@@ -3764,6 +4028,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 1,
@@ -3786,6 +4051,7 @@
    "points": "6",
    "comments": "1",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 1,
@@ -3807,6 +4073,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "developer_experience",
    "threat": 1,
@@ -3828,6 +4095,7 @@
    "points": "4",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "negative",
    "theme": "ai_agents",
    "threat": 2,
@@ -3849,6 +4117,7 @@
    "points": "161",
    "comments": "69",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 1,
@@ -3870,6 +4139,7 @@
    "points": "4",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "neutral",
    "theme": "other",
    "threat": 1,
@@ -3891,6 +4161,7 @@
    "points": "4",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "positive",
    "theme": "data_platform",
    "threat": 1,
@@ -3912,6 +4183,7 @@
    "points": "38",
    "comments": "14",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "data_platform",
    "threat": 1,
@@ -3933,6 +4205,7 @@
    "points": "5",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 1,
@@ -3954,6 +4227,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "developer_experience",
    "threat": 1,
@@ -3975,6 +4249,7 @@
    "points": "5",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "performance_cost",
    "threat": 1,
@@ -3996,6 +4271,7 @@
    "points": "10",
    "comments": "4",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 1,
@@ -4017,6 +4293,7 @@
    "points": "8",
    "comments": "1",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "negative",
    "theme": "governance_security",
    "threat": 4,
@@ -4038,6 +4315,7 @@
    "points": "3",
    "comments": "1",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "governance_security",
    "threat": 1,
@@ -4059,6 +4337,7 @@
    "points": "9",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "developer_experience",
    "threat": 1,
@@ -4080,6 +4359,7 @@
    "points": "85",
    "comments": "11",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "developer_experience",
    "threat": 1,
@@ -4101,6 +4381,7 @@
    "points": "3",
    "comments": "1",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "positive",
    "theme": "performance_cost",
    "threat": 1,
@@ -4122,6 +4403,7 @@
    "points": "4",
    "comments": "1",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "",
    "theme": "",
    "threat": null,
@@ -4143,6 +4425,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 1,
@@ -4164,6 +4447,7 @@
    "points": "10",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "developer_experience",
    "threat": 1,
@@ -4185,6 +4469,7 @@
    "points": "4",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 1,
@@ -4206,6 +4491,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 1,
@@ -4227,6 +4513,7 @@
    "points": "4",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "negative",
    "theme": "other",
    "threat": 2,
@@ -4248,6 +4535,7 @@
    "points": "9",
    "comments": "2",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "neutral",
    "theme": "performance_cost",
    "threat": 2,
@@ -4269,6 +4557,7 @@
    "points": "3",
    "comments": "1",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 1,
@@ -4290,6 +4579,7 @@
    "points": "5",
    "comments": "1",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "neutral",
    "theme": "performance_cost",
    "threat": 2,
@@ -4311,6 +4601,7 @@
    "points": "6",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "neutral",
    "theme": "performance_cost",
    "threat": 1,
@@ -4332,6 +4623,7 @@
    "points": "5",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "customer_story",
    "sentiment": "negative",
    "theme": "developer_experience",
    "threat": 3,
@@ -4353,6 +4645,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 1,
@@ -4374,6 +4667,7 @@
    "points": "130",
    "comments": "25",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "performance_cost",
    "threat": 1,
@@ -4395,6 +4689,7 @@
    "points": "7",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "positive",
    "theme": "performance_cost",
    "threat": 3,
@@ -4416,6 +4711,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "positive",
    "theme": "developer_experience",
    "threat": 2,
@@ -4437,6 +4733,7 @@
    "points": "424",
    "comments": "157",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "negative",
    "theme": "governance_security",
    "threat": 1,
@@ -4458,6 +4755,7 @@
    "points": "3",
    "comments": "1",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "negative",
    "theme": "governance_security",
    "threat": 1,
@@ -4479,6 +4777,7 @@
    "points": "4",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 4,
@@ -4500,6 +4799,7 @@
    "points": "5",
    "comments": "1",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "negative",
    "theme": "data_platform",
    "threat": 1,
@@ -4521,6 +4821,7 @@
    "points": "4",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "neutral",
    "theme": "developer_experience",
    "threat": 2,
@@ -4542,6 +4843,7 @@
    "points": "4",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "neutral",
    "theme": "performance_cost",
    "threat": 3,
@@ -4563,6 +4865,7 @@
    "points": "4",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "funding_business",
    "threat": 3,
@@ -4584,6 +4887,7 @@
    "points": "4",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 5,
@@ -4605,6 +4909,7 @@
    "points": "37",
    "comments": "9",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "neutral",
    "theme": "data_platform",
    "threat": 3,
@@ -4626,6 +4931,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "developer_experience",
    "threat": 2,
@@ -4647,6 +4953,7 @@
    "points": "3",
    "comments": "1",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 4,
@@ -4668,6 +4975,7 @@
    "points": "25",
    "comments": "19",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "negative",
    "theme": "funding_business",
    "threat": 1,
@@ -4689,6 +4997,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "negative",
    "theme": "governance_security",
    "threat": 1,
@@ -4710,6 +5019,7 @@
    "points": "269",
    "comments": "82",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "negative",
    "theme": "governance_security",
    "threat": 1,
@@ -4732,6 +5042,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "negative",
    "theme": "governance_security",
    "threat": 1,
@@ -4753,6 +5064,7 @@
    "points": "5",
    "comments": "2",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "data_platform",
    "threat": 3,
@@ -4774,6 +5086,7 @@
    "points": "4",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "negative",
    "theme": "funding_business",
    "threat": 1,
@@ -4795,6 +5108,7 @@
    "points": "4",
    "comments": "3",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 5,
@@ -4802,7 +5116,7 @@
    "insight": "Snowflake claims AI coding superiority in data engineering, posing a direct competitive threat.",
    "ai_status": "ok",
    "ai_issue": "",
-   "cited": true
+   "cited": false
   },
   {
    "record_id": "SNOW-DEV-021",
@@ -4816,6 +5130,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "neutral",
    "theme": "other",
    "threat": 1,
@@ -4837,6 +5152,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 2,
@@ -4858,6 +5174,7 @@
    "points": "4",
    "comments": "1",
    "origin": "snapshot",
+   "proof_type": "partnership",
    "sentiment": "positive",
    "theme": "partnerships_ecosystem",
    "threat": 4,
@@ -4879,6 +5196,7 @@
    "points": "6",
    "comments": "4",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "developer_experience",
    "threat": 3,
@@ -4900,6 +5218,7 @@
    "points": "6",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "data_platform",
    "threat": 4,
@@ -4921,6 +5240,7 @@
    "points": "7",
    "comments": "1",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "negative",
    "theme": "performance_cost",
    "threat": 2,
@@ -4942,6 +5262,7 @@
    "points": "4",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "negative",
    "theme": "other",
    "threat": 1,
@@ -4963,6 +5284,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "business_news",
    "sentiment": "negative",
    "theme": "funding_business",
    "threat": 2,
@@ -4984,6 +5306,7 @@
    "points": "7",
    "comments": "1",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "neutral",
    "theme": "performance_cost",
    "threat": 3,
@@ -5005,6 +5328,7 @@
    "points": "29",
    "comments": "11",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "neutral",
    "theme": "data_engineering",
    "threat": 3,
@@ -5026,6 +5350,7 @@
    "points": "4",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "neutral",
    "theme": "developer_experience",
    "threat": 2,
@@ -5047,6 +5372,7 @@
    "points": "8",
    "comments": "3",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "neutral",
    "theme": "developer_experience",
    "threat": 4,
@@ -5068,6 +5394,7 @@
    "points": "4",
    "comments": "1",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "neutral",
    "theme": "developer_experience",
    "threat": 2,
@@ -5089,6 +5416,7 @@
    "points": "3",
    "comments": "1",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "neutral",
    "theme": "developer_experience",
    "threat": 2,
@@ -5110,6 +5438,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "how_to",
    "sentiment": "positive",
    "theme": "developer_experience",
    "threat": 3,
@@ -5131,6 +5460,7 @@
    "points": "5",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "customer_story",
    "sentiment": "negative",
    "theme": "performance_cost",
    "threat": 2,
@@ -5152,6 +5482,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "discussion",
    "sentiment": "negative",
    "theme": "analytics_bi",
    "threat": 1,
@@ -5173,6 +5504,7 @@
    "points": "3",
    "comments": "0",
    "origin": "snapshot",
+   "proof_type": "launch",
    "sentiment": "positive",
    "theme": "ai_agents",
    "threat": 5,
@@ -5186,7 +5518,7 @@
  "warnings": [
   {
    "level": "info",
-   "text": "The evidence was collected on 28 Sep 2026 (19 days ago). Anything announced after that is not in this brief."
+   "text": "The evidence was collected on 28 Sep 2026 (21 days ago). Anything announced after that is not in this brief."
   },
   {
    "level": "warn",
@@ -5253,15 +5585,15 @@
   "usable": 212,
   "needs_review": 2,
   "high_threat": 51,
-  "cited": 25
+  "cited": 31
  },
  "models": {
   "classifier": "gpt-4.1-mini",
   "strategist": "gpt-4.1"
  },
  "usage": {
-  "prompt_tokens": 2723,
-  "completion_tokens": 1033
+  "prompt_tokens": 3040,
+  "completion_tokens": 1134
  },
- "seconds": 5.6
+ "seconds": 9.0
 }

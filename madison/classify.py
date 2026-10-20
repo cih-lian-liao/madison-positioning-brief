@@ -7,7 +7,7 @@ the record is marked "needs_review" with the reason, as in A4.
 from concurrent.futures import ThreadPoolExecutor
 
 from . import llm
-from .config import BRANDS, CLASSIFIER_BATCH, CLASSIFIER_MODEL, CORE_AREAS, SENTIMENTS, THEMES
+from .config import BRANDS, CLASSIFIER_BATCH, CLASSIFIER_MODEL, CORE_AREAS, PROOF_MODEL, PROOF_TYPES, SENTIMENTS, THEMES
 from .data import slug
 from .errors import FriendlyError
 
@@ -117,3 +117,64 @@ def classify(records, focus, workers=6, on_batch=None):
     if errors and len(errors) == len(batches):
         raise errors[0]  # nothing was labelled at all: surface the real reason
     return labels, tuple(usage)
+
+
+# ---------------------------------------------------------------------------
+# Proof type (added after user testing, 19 Oct 2026): what kind of proof a record is if a
+# product marketer cites it. It does not depend on which company is "yours", so it is labelled once.
+# ---------------------------------------------------------------------------
+PROOF_SYSTEM = """You label evidence records for a product marketer. For EVERY record decide what kind of proof it would be if the marketer cited it in a positioning deck.
+
+proof_type, exactly one of:
+- customer_story: a named customer's use, results or case study
+- launch: a post that announces or introduces a named product, feature, model, integration or pricing change
+- partnership: a partnership or alliance, an investment, or an acquisition of or by another company
+- business_news: funding, valuation, revenue, earnings, leadership, legal matters, events, sponsorships or general market coverage
+- how_to: a tutorial, tips or best-practices list, migration or architecture guide, blueprint, maturity model, or a "how I built it" write-up
+- discussion: a forum thread or opinion piece that asks, argues, compares or complains, without a concrete announcement
+
+Decide in this order:
+1. A named customer's story -> customer_story.
+2. The title names a specific product or feature (a proper name such as "CoCo", "Genie One MCP", "Data Agent Kit", "Unity Catalog Pages") and is not worded as a guide ("How to", "Top 5", "best practices", "How I built", "Designing", "Using X to") -> launch. "Now available", "GA", "preview", "Introducing" and "Announcing" are always launch.
+3. Otherwise use the definitions above.
+
+Rules:
+- Judge only from the title and summary.
+- Official company blog posts are never discussion: an opinion or framework post on a company blog is how_to.
+- A Hacker News thread that simply shares a launch, a customer story or an acquisition keeps that type. Threads that ask, argue or complain are discussion.
+- Return valid json only: {"proof": [{"record_id": "...", "proof_type": "..."}]}
+- Exactly one entry per record."""
+
+
+def classify_proof(records, workers=6, batch_size=20):
+    """Returns ({record_id: proof_type or ""}, (prompt_tokens, completion_tokens))."""
+    batches = [records[i:i + batch_size] for i in range(0, len(records), batch_size)]
+    usage = [0, 0]
+    errors = []
+
+    def run(batch):
+        user = f"Label these {len(batch)} records and answer in json.\n\n" + "\n".join(_record_text(r) for r in batch)
+        try:
+            parsed, _, used = llm.chat_json(PROOF_MODEL, PROOF_SYSTEM, user, temperature=0)
+        except FriendlyError as e:
+            errors.append(e)
+            return {r["record_id"]: "" for r in batch}, (0, 0)
+        answers = parsed.get("proof") if isinstance(parsed, dict) else None
+        by_id = {str(a.get("record_id", "")).strip(): a.get("proof_type") for a in answers or [] if isinstance(a, dict)}
+        out = {}
+        for r in batch:
+            kind = by_id.get(r["record_id"]) if by_id.get(r["record_id"]) in PROOF_TYPES else ""
+            if kind == "discussion" and r["source_type"] == "official_blog":
+                kind = "how_to"  # a company's own blog is never a forum discussion
+            out[r["record_id"]] = kind
+        return out, used
+
+    out = {}
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        for result, used in pool.map(run, batches):
+            out.update(result)
+            usage[0] += used[0]
+            usage[1] += used[1]
+    if errors and len(errors) == len(batches):
+        raise errors[0]
+    return out, tuple(usage)

@@ -9,7 +9,7 @@ import io
 import re
 from datetime import datetime
 
-from .config import SNAPSHOT_DATE, SOURCES, THEMES
+from .config import PROOF_TYPES, SNAPSHOT_DATE, SOURCES, THEMES
 from .data import slug
 from .pipeline import fmt_day
 
@@ -56,6 +56,16 @@ color:var(--mpb-ink);font-size:15px;line-height:1.55;text-align:left}
 .mpb-ref{display:inline-block;font:12px/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--mpb-accent-soft);color:var(--mpb-accent-ink)!important;border-radius:5px;padding:0 7px;margin:5px 5px 0 0;text-decoration:none!important;white-space:nowrap}
 .mpb-ref:hover{outline:1px solid var(--mpb-accent)}
 .mpb-ref.bad{background:var(--mpb-bad-soft);color:var(--mpb-bad)!important;text-decoration:line-through!important}
+.mpb-ref.s-strong{background:var(--mpb-good-soft);color:var(--mpb-good)!important}
+.mpb-ref.s-weak{background:var(--mpb-warn-soft);color:var(--mpb-warn)!important}
+.mpb-ref .mpb-pt{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:11.5px;margin-left:6px;padding-left:6px;border-left:1px solid currentColor}
+.mpb-weak{margin-top:8px;background:var(--mpb-warn-soft);color:var(--mpb-warn);border-radius:6px;padding:6px 9px;font-size:13px}
+.mpb-legend{font-size:12.5px;color:var(--mpb-muted);margin:8px 0 0}
+.mpb-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin:0 4px 0 10px;vertical-align:-1px}
+.mpb-upload{border-radius:8px;padding:8px 10px;font-size:13px;line-height:1.45;margin:6px 0}
+.mpb-upload.ok{background:var(--mpb-good-soft);color:var(--mpb-ink)}
+.mpb-upload.bad{background:var(--mpb-bad-soft);color:var(--mpb-ink)}
+.mpb-upload b{color:var(--mpb-ink)}
 .mpb-ok{color:var(--mpb-good);font-weight:700}
 .mpb-no{color:var(--mpb-bad);font-weight:700}
 .mpb-meter{display:inline-flex;gap:3px;vertical-align:middle;margin-right:6px}
@@ -157,9 +167,13 @@ class _Ctx:
         rec = self.by_id.get(rid)
         if not rec or rec.get("ai_status") != "ok" or rec.get("duplicate_of"):
             return f'<span class="mpb-ref bad" title="This ID is not in the evidence">{e(rid)}</span>'
+        label, strength = PROOF_TYPES.get(rec.get("proof_type") or "", ("", "unknown"))
         tip = f"{rec['title']} · {rec['publisher']} · {fmt_day(rec['published_date'])}"
-        return (f'<a class="mpb-ref" href="{e(_safe_url(rec["url"]))}" target="_blank" rel="noopener noreferrer" '
-                f'title="{e(tip)}">{e(rid)}</a>')
+        if label:
+            tip += f" · AI label: {label}"
+        tag = f'<span class="mpb-pt">{e(label)}</span>' if label else ""
+        return (f'<a class="mpb-ref s-{strength}" href="{e(_safe_url(rec["url"]))}" target="_blank" '
+                f'rel="noopener noreferrer" title="{e(tip)}">{e(rid)}{tag}</a>')
 
     def chips(self, refs):
         return "".join(self.chip(str(x).strip()) for x in (refs or []))
@@ -196,14 +210,33 @@ def banner(result):
 
 
 def flags(result):
-    off = [c for c in result.get("threat_checks", []) if not c["ok"]]
-    if not off:
+    items = [f"the AI rated {e(c['brand'])} {c['ai']}/5, but its evidence averages {c['evidence_avg']:.1f} "
+             "(ratings should stay within 1 point)" for c in result.get("threat_checks", []) if not c["ok"]]
+    items += [f"“{e(w['claim'].split(': ', 1)[-1])}” rests only on "
+              f"{e(' and '.join(PROOF_TYPES[t][0] for t in w['types'] if t in PROOF_TYPES) or 'weak')} proof"
+              for w in result.get("qa", {}).get("weak_proof", [])]
+    if not items:
         return ""
-    items = "; ".join(f"the AI rated {e(c['brand'])} {c['ai']}/5, but its evidence averages {c['evidence_avg']:.1f}"
-                      for c in off)
-    n = len(off)
-    return (f'<div class="mpb-flag"><b>{n} thing{"s" if n > 1 else ""} to review before you share:</b> {items}. '
-            "Ratings should stay within 1 point of what the evidence shows.</div>")
+    n = len(items)
+    return (f'<div class="mpb-flag"><b>{n} thing{"s" if n > 1 else ""} to review before you share:</b> '
+            f'{"; ".join(items)}.</div>')
+
+
+STRENGTH_TAG = {"strong": ("ok", "strong proof"), "medium": ("", "moderate proof"), "weak": ("warn", "weak proof")}
+
+
+def proof_tag(proof):
+    if not proof:
+        return ""
+    cls, text = STRENGTH_TAG.get(proof.get("strength"), ("", ""))
+    return f' <span class="mpb-tag {cls}">{text}</span>' if text else ""
+
+
+LEGEND = ('<p class="mpb-legend">Source labels are AI judgements from each headline: '
+          '<i style="background:var(--mpb-good-soft);border:1px solid var(--mpb-good)"></i>customer story, launch, '
+          'partner or acquisition <i style="background:var(--mpb-accent-soft);border:1px solid var(--mpb-accent)"></i>'
+          'business news <i style="background:var(--mpb-warn-soft);border:1px solid var(--mpb-warn)"></i>how-to or '
+          'discussion</p>')
 
 
 def kpis(result):
@@ -249,11 +282,18 @@ def brief_view(result, example=False):
     out.append(f'<h2 class="mpb-h">Positioning statement {tick(ps.get("verified"))}</h2>'
                f'<div class="mpb-callout">{e(ps.get("text"))}<div>{c.chips(ps.get("evidence_refs"))}</div></div>')
 
+    def weak_note(d):
+        if (d.get("proof") or {}).get("strength") != "weak":
+            return ""
+        return ('<div class="mpb-weak">Only how-to or discussion posts back this point. Find a customer result or '
+                'a launch before you put it in a deck.</div>')
+
     cards = "".join(
         f'<div class="mpb-card"><h3 class="mpb-h3"><span class="mpb-num">{i}</span>{e(d.get("title"))} {tick(d.get("verified"))}</h3>'
-        f'<p>{e(d.get("claim"))}</p><div>{c.chips(d.get("evidence_refs"))}</div></div>'
+        f'<div style="margin:-2px 0 6px">{proof_tag(d.get("proof"))}</div>'
+        f'<p>{e(d.get("claim"))}</p><div>{c.chips(d.get("evidence_refs"))}</div>{weak_note(d)}</div>'
         for i, d in enumerate(b.get("differentiators", []), start=1))
-    out.append(f'<h2 class="mpb-h">Why {e(c.focus)} wins</h2><div class="mpb-cards">{cards}</div>')
+    out.append(f'<h2 class="mpb-h">Why {e(c.focus)} wins</h2><div class="mpb-cards">{cards}</div>{LEGEND}')
 
     checks = {x["brand"]: x for x in result.get("threat_checks", [])}
     rows = []
@@ -345,11 +385,15 @@ def checks_view(result):
     hist = result.get("qa_history", [])
     out = ['<div class="mpb">',
            '<h2 class="mpb-h" style="margin-top:4px">How the check works</h2>'
-           '<p>Every claim in the brief must cite at least one record ID from this run’s evidence, and each cited '
-           'record must be about the right company. A claim that fails goes back to the AI once, with the exact '
-           'problem. If anything still fails, the brief is labelled <b>Not verified</b> and the failing claims are '
-           'marked ✗.</p><p class="mpb-muted mpb-small">What it does not check: whether each source says exactly '
-           'what the claim says. Open two or three sources before you present.</p>']
+           '<p>Every claim must pass three rules: (1) it cites at least one record ID from this run’s evidence; '
+           '(2) each cited record is about the right company; (3) a sentence that names a competitor, such as '
+           '“unlike Snowflake”, also cites that competitor’s own records. A claim that fails goes back to the AI '
+           'once, with the exact problem. If anything still fails, the brief is labelled <b>Not verified</b> and the '
+           'failing claims are marked ✗.</p><p>Each source also carries an AI label for the kind of proof it is. '
+           'Customer stories, launches and partnerships count as strong proof; how-to and discussion posts as weak. '
+           'A reason-you-win backed only by weak proof is flagged for review.</p>'
+           '<p class="mpb-muted mpb-small">What it does not check: whether each source says exactly what the claim '
+           'says, and whether an AI proof label is right. Open two or three sources before you present.</p>']
     steps = []
     for h in hist:
         res = '<span class="mpb-ok">passed</span>' if h["pass"] else '<span class="mpb-no">failed</span>'
@@ -361,9 +405,10 @@ def checks_view(result):
 
     rows = "".join(
         f'<tr><td>{tick(cl["verified"])}</td><td>{e(cl["claim"])}</td><td>{c.chips(cl["refs"])}</td>'
+        f'<td>{proof_tag(cl.get("proof")) or "–"}</td>'
         f'<td>{e("; ".join(cl["problems"])) or "–"}</td></tr>' for cl in qa.get("claims", []))
     out.append('<h2 class="mpb-h">Claim by claim</h2><table class="mpb-table"><thead><tr><th></th><th>Claim</th>'
-               f'<th>Sources cited</th><th>Problem</th></tr></thead><tbody>{rows}</tbody></table>')
+               f'<th>Sources cited</th><th>Proof</th><th>Problem</th></tr></thead><tbody>{rows}</tbody></table>')
 
     trows = "".join(
         f'<tr><td>{e(x["brand"])}</td><td>{x["ai"]}/5</td><td>{x["evidence_avg"]:.2f}</td>'
@@ -419,12 +464,13 @@ def _source_row(c, r):
     return (f'<tr><td>{c.chip(r["record_id"])}</td><td><a href="{e(_safe_url(r["url"]))}" target="_blank" '
             f'rel="noopener noreferrer">{e(r["title"])}</a><div class="mpb-muted mpb-small">{e(r["publisher"])} · '
             f'{e(fmt_day(r["published_date"]))} · {e(SOURCE_LABEL.get(r["source_type"], r["source_type"]))}</div></td>'
+            f'<td>{e(PROOF_TYPES.get(r.get("proof_type") or "", ("–",))[0])}</td>'
             f'<td>{e(THEMES.get(r.get("theme"), r.get("theme") or "–"))}</td><td>{r.get("threat") or "–"}</td></tr>')
 
 
 def sources_view(result):
     c = _Ctx(result)
-    head = '<thead><tr><th>ID</th><th>Source</th><th>Topic</th><th>Threat</th></tr></thead>'
+    head = '<thead><tr><th>ID</th><th>Source</th><th>Proof (AI label)</th><th>Topic</th><th>Threat</th></tr></thead>'
     order = [c.focus] + result["settings"]["competitors"]
     cited = [r for r in result["records"] if r.get("cited")]
     out = ['<div class="mpb">',
@@ -457,6 +503,23 @@ def empty_view():
 </div>
 <p class="mpb-muted mpb-small" style="margin-top:12px">Want to see one first? Press <b>See an example brief</b>; it opens instantly.</p>
 </div></div>"""
+
+
+def upload_check_view(added, skipped):
+    """Shown under the upload box as soon as a file is added, before anything is built (v2)."""
+    ready = f"<b>✓ {len(added)} row{'s' if len(added) != 1 else ''} ready to use.</b>"
+    if not skipped:
+        return f'<div class="mpb"><div class="mpb-upload ok">{ready}</div></div>'
+    items = "".join(f"<li>Row {line}: {e(why)}</li>" for line, why in skipped[:5])
+    more = f"<li>…and {len(skipped) - 5} more</li>" if len(skipped) > 5 else ""
+    return (f'<div class="mpb"><div class="mpb-upload ok">{ready} {len(skipped)} '
+            f'{"rows" if len(skipped) != 1 else "row"} will be skipped:<ul style="margin:4px 0 0;padding-left:18px">'
+            f'{items}{more}</ul></div></div>')
+
+
+def upload_error_view(err):
+    return (f'<div class="mpb"><div class="mpb-upload bad" role="alert"><b>{e(err.title)}</b><br>{e(err.detail)}'
+            f'<br><b>What to do:</b> {e(err.fix)}</div></div>')
 
 
 def error_view(err):
@@ -505,7 +568,9 @@ def plain_text(result):
     lines += ["", "RISKS TO WATCH"] + [f"- {r.get('risk', '')} {_ids(r)}" for r in b.get("risks_to_watch", [])]
     lines += ["", "SOURCES"]
     for r in sorted((x for x in result["records"] if x.get("cited")), key=lambda x: x["record_id"]):
-        lines.append(f"[{r['record_id']}] {r['title']} ({r['publisher']}, {fmt_day(r['published_date'])}) {r['url']}")
+        kind = PROOF_TYPES.get(r.get("proof_type") or "", ("",))[0]
+        lines.append(f"[{r['record_id']}{' · ' + kind if kind else ''}] {r['title']} ({r['publisher']}, "
+                     f"{fmt_day(r['published_date'])}) {r['url']}")
     return "\n".join(lines)
 
 
@@ -515,7 +580,8 @@ def _ids(part):
 
 
 CSV_COLUMNS = ["record_id", "brand", "source_type", "publisher", "published_date", "title", "url", "sentiment", "theme",
-               "threat", "positioning_signal", "insight", "cited_in_brief", "ai_status", "ai_issue", "duplicate_of", "origin"]
+               "threat", "proof_type", "positioning_signal", "insight", "cited_in_brief", "ai_status", "ai_issue",
+               "duplicate_of", "origin"]
 
 
 def downloads(result):

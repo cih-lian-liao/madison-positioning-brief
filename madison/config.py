@@ -30,6 +30,25 @@ SOURCES = {
     "developer_forum": ("Developer forums", "hacker_news"),
 }
 
+# How each company's name appears in a sentence (same rules as the A3/A5 data contract).
+BRAND_PATTERNS = {
+    "Databricks": r"\bDatabricks\b",
+    "Snowflake": r"\bSnowflake\b",
+    "Google BigQuery": r"\bBig ?Query\b",
+    "Microsoft Fabric": r"\b(?:Microsoft )?Fabric\b",
+}
+
+# What kind of proof a record is if a product marketer cites it: label shown on screen, and strength.
+# Added after user testing (19 Oct 2026): testers could not tell a customer story from a how-to post.
+PROOF_TYPES = {
+    "customer_story": ("customer story", "strong"),
+    "launch": ("launch", "strong"),
+    "partnership": ("partner or acquisition", "strong"),
+    "business_news": ("business news", "medium"),
+    "how_to": ("how-to", "weak"),
+    "discussion": ("discussion", "weak"),
+}
+
 THEMES = {
     "ai_agents": "AI & agents",
     "data_platform": "Data platform & lakehouse",
@@ -51,6 +70,7 @@ TIMEZONE = "America/Los_Angeles"
 
 CLASSIFIER_MODEL = os.getenv("MADISON_CLASSIFIER_MODEL", "gpt-4.1-mini")
 STRATEGIST_MODEL = os.getenv("MADISON_STRATEGIST_MODEL", "gpt-4.1")
+PROOF_MODEL = os.getenv("MADISON_PROOF_MODEL", "gpt-4.1")  # follows the proof-type rules more closely than mini
 CLASSIFIER_BATCH = 10
 
 # Data-contract thresholds (Conductor Brief Parts 3-5).
