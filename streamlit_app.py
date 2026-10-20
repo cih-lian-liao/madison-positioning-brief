@@ -131,6 +131,9 @@ with st.sidebar:
                 st.html(render.upload_check_view(rows_ok, rows_skipped))
             except FriendlyError as err:
                 st.html(render.upload_error_view(err))
+            except Exception:  # never show a stack trace; the build step checks the file again anyway
+                traceback.print_exc()
+                st.warning("We couldn't check that file just now. Add it again, or build the brief without it.")
         st.download_button("Download the CSV template", data=TEMPLATE.read_bytes(),
                            file_name="madison_evidence_template.csv", mime="text/csv", on_click="ignore")
 
@@ -185,11 +188,18 @@ elif example:
 # ---------------------------------------------------------------------------
 # Output (right side)
 # ---------------------------------------------------------------------------
-error = st.session_state.get("error")
-result = st.session_state.get("result")
-if error:
-    st.html(render.error_view(error))
-elif result:
+def show_output():
+    error = st.session_state.get("error")
+    result = st.session_state.get("result")
+    if error:
+        st.html(render.error_view(error))
+    elif result:
+        show_result(result)
+    else:
+        st.html(render.empty_view())
+
+
+def show_result(result):
     is_example = st.session_state.get("example", False)
     (html_name, html_bytes), (csv_name, csv_bytes) = render.downloads(result)
     tab_brief, tab_cards, tab_checks, tab_sources, tab_download = st.tabs(
@@ -211,7 +221,13 @@ elif result:
                            file_name=csv_name, mime="text/csv", on_click="ignore")
         st.markdown("**Plain-text version** to paste into an email, doc or Slack (copy button at the top right of the box):")
         st.code(render.plain_text(result), language=None, wrap_lines=True)
-else:
-    st.html(render.empty_view())
+
+
+try:
+    show_output()
+except Exception:  # never show a stack trace to a visitor
+    traceback.print_exc()
+    st.session_state.update(result=None, error=None)
+    st.error("Something went wrong while showing this page. Press “See an example brief” or “Build my brief” again.")
 
 st.html(FOOTER)
