@@ -1,6 +1,8 @@
-# Madison Positioning Brief
+# Briefproof
 
-**Proof, not opinion.** Madison Positioning Brief helps product marketers at data platform companies turn
+*Formerly "Madison Positioning Brief" (the working name in INFO7375 A6A). The web address keeps the old name.*
+
+**Proof, not opinion.** Briefproof helps product marketers at data platform companies turn
 competitor news into a fully sourced brief, so they can answer "How do we win?" with proof, not opinion.
 
 ## How to use it

@@ -19,7 +19,7 @@ from madison.errors import FriendlyError
 from madison.limits import reserver, visitor_id
 from madison.pipeline import Settings, fmt_day, run
 
-st.set_page_config(page_title="Madison Positioning Brief", page_icon="🧭", layout="wide",
+st.set_page_config(page_title="Briefproof", page_icon="🧭", layout="wide",
                    initial_sidebar_state="expanded")
 
 # On Streamlit Community Cloud the key is a secret; the pipeline reads it from the environment.
@@ -40,7 +40,7 @@ SOURCE_LABELS = {
 TOPICS = ["all"] + [k for k in THEMES if k != "other"]
 
 HEADER = f"""<div class="mpb mpb-header">
-<div class="mpb-label">Madison Positioning Brief · Proof, not opinion</div>
+<div class="mpb-label">Briefproof · Proof, not opinion</div>
 <h1 class="mpb-hero">Turn competitor news into a fully sourced brief</h1>
 <p class="mpb-lede">Built for product marketers at data platform companies, so you can answer
 <b>“How do we win?”</b> with proof, not opinion. Every claim links to its public source, and a brief is
@@ -135,7 +135,7 @@ with st.sidebar:
                 traceback.print_exc()
                 st.warning("We couldn't check that file just now. Add it again, or build the brief without it.")
         st.download_button("Download the CSV template", data=TEMPLATE.read_bytes(),
-                           file_name="madison_evidence_template.csv", mime="text/csv", on_click="ignore")
+                           file_name="briefproof_evidence_template.csv", mime="text/csv", on_click="ignore")
 
     build = st.button("Build my brief", type="primary", width="stretch")
     example = st.button("See an example brief (opens instantly)", width="stretch")

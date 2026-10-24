@@ -533,7 +533,7 @@ def error_view(err):
 # ---------------------------------------------------------------------------
 def standalone_html(result):
     title = f"Positioning brief: {_vs_line(result)} ({built_at(result)})"
-    body = (f'<div class="mpb-label">Madison Positioning Brief · Proof, not opinion</div>'
+    body = (f'<div class="mpb-label">Briefproof · Proof, not opinion</div>'
             f'<div class="mpb-doc-title">{e(_vs_line(result))}</div>'
             + brief_view(result).removeprefix('<div class="mpb">').removesuffix("</div>")
             + '<div class="mpb-part"><h2 class="mpb-h">Battlecards</h2></div>'
@@ -586,7 +586,7 @@ CSV_COLUMNS = ["record_id", "brand", "source_type", "publisher", "published_date
 
 def downloads(result):
     """The stand-alone brief (HTML, prints to PDF) and the scored evidence (CSV), as (file name, bytes) pairs."""
-    stem = f"Madison_brief_{slug(result['settings']['company'])}_{result['run_id']}"
+    stem = f"Briefproof_brief_{slug(result['settings']['company'])}_{result['run_id']}"
     threat_col = f"threat_to_{slug(result['settings']['company'])}"
 
     def cell(r, k):

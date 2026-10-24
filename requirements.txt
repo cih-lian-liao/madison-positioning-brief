@@ -2,3 +2,4 @@ streamlit==1.66.0
 openai==3.33.0
 tzdata
 # v2 (19 Oct 2026): changing this file makes Streamlit Cloud restart the app and load the new madison modules
+# 24 Oct 2026: renamed to Briefproof; this edit makes Streamlit Cloud restart and reload the madison modules
